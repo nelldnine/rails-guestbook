@@ -1,0 +1,14 @@
+%h2 Add New Post
+.row
+  .col-4
+    = form_for @post do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', autofocus: true
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: 'form-control'
+      .form-group
+        = f.label :message
+        = f.text_area :message, class: 'form-control'
+      = f.submit class: 'btn btn-primary'

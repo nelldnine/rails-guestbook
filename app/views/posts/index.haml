@@ -1,0 +1,10 @@
+- if @posts.blank?
+  %h2 There are no posts yet.
+- else
+  - for post in @posts
+    %p
+      %h2= mail_to post.email, post.name
+      %blockquote.blockquote= post.message
+      %small= post.created_at.strftime("%B %d, %Y %I:%M %p")
+
+= link_to 'Add New Post', new_post_path
